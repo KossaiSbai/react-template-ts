@@ -1,12 +1,36 @@
-function App() {
+import ExpensesTable from "./ExpensesTable";
+import React, {useEffect, useState} from "react";
+import {Expense} from "./types/types";
+
+const App: React.FC = () => {
+
+    const [expenses, setExpenses] = useState<Expense[]>([]);
+    const retrieveExpenses = async () => {
+        try {
+            const response = await fetch("https://expenses-backend-mu.vercel.app/expenses", {
+                headers: {
+                    "Content-Type": "application/json",
+                    Username: "kossai.sbai" // Replace with actual username
+                }
+            });
+            if (!response.ok) {
+                console.error('Error fetching expenses:', response.statusText);
+                return []
+            }
+            const data = await response.json();
+            setExpenses(data);
+        } catch (error) {
+            console.error('Error fetching expenses:', error);
+        }
+    };
+
+    useEffect(() => {
+        retrieveExpenses();
+    }, []);
+
   return (
     <div id="template-text">
-      <h1>React Starter Template - TypeScript</h1>
-      <p>
-        For JavaScript please use{" "}
-        <a href="https://github.com/ruairidhflint/react-template">this</a>{" "}
-        template
-      </p>
+      <ExpensesTable expenses={expenses}/>
     </div>
   );
 }

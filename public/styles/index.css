@@ -16,10 +16,12 @@
   Typographic tweaks!
   3. Add accessible line-height
   4. Improve text rendering
+  please note: could not figure out which font to use, went for Roboto as it seemed the closest one to the spec
 */
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  font-family: 'Roboto';
 }
 /*
   5. Improve media defaults

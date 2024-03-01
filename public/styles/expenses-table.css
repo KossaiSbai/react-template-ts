@@ -1,0 +1,44 @@
+.wrapper {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.header {
+    margin: 0 0 20px 0;
+}
+
+.title {
+    font-size: 60px;
+    margin-bottom: 8px;
+    font-weight: bold;
+    margin-left: 32px;
+}
+
+.divider {
+    border: 0;
+    height: 2px;
+    background-color: #000;
+}
+
+.styledTable {
+    width: 100%;
+}
+
+.styledTh {
+    color: #333;
+    padding: 10px 0;
+    font-size: 34px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.styledTr {
+    max-width: 50px;
+}
+
+.styledTd {
+    padding: 10px 0;
+    font-weight: bold;
+    font-size: 18px;
+    max-width: 175px;
+}
